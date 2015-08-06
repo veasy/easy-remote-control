@@ -20,19 +20,22 @@ You can now call all the routes the server provieds. For example:
 	* media
   		* play (playpause)
   		* next
-  		* previews
+  		* previous
   		* volume
 	  		* up
 	  		* down
 	  		* mute (toggle)
+	* app/[name]
+		* focus
+		* start
+		* stop
   	* keys
   		* return
   		* escape
-  		* arrows
-	  		* up
-	  		* down
-	  		* left
-	  		* right
+	  	* up
+	  	* down
+	  	* left
+	  	* right
 
 ### About
 Written by Markus and Florian
