@@ -1,2 +1,3 @@
 #!/bin/sh
-python /home/oskar/easy-remote-control/erc-server/erc-server.py
+cd /home/oskar/easy-remote-control/erc-server/
+python erc_server.py
