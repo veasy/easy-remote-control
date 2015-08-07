@@ -1,4 +1,4 @@
-# Easy Remote Control
+# Easy Remote Control  [![Code Climate](https://codeclimate.com/github/Veasy/easy-remote-control/badges/gpa.svg)](https://codeclimate.com/github/Veasy/easy-remote-control)
 A simple remote control server for plex home theater on linux.
 
 ### How does it work?
@@ -10,7 +10,7 @@ By default the server provides a webpage which can be used as remote control.
 Just download the source, run following command and create a new startup entry under ubuntu.
 
 ```
-python setup.py install
+start_erc-server.sh
 ```
 
 ### How to use it?
@@ -41,4 +41,3 @@ You can now call all the routes the server provieds. For example:
 Written by Markus and Florian
 
 *MIT License 2015*
- 

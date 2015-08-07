@@ -1,0 +1,5 @@
+languages:
+  Python: true
+exclude_paths:
+ - "erc-server/start_erc-server.sh"
+ - "erc-webapp/*"
