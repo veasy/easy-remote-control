@@ -40,4 +40,6 @@ You can now call all the routes the server provieds. For example:
 ### About
 Written by Markus and Florian
 
-*MIT License 2015*
+*The MIT License (MIT)*
+
+*Copyright (c) 2015 Veasy*
