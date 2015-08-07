@@ -1,4 +1,4 @@
-# Easy Remote Control  [![Code Climate](https://codeclimate.com/github/Veasy/easy-remote-control/badges/gpa.svg)](https://codeclimate.com/github/Veasy/easy-remote-control)
+# Easy Remote Control  [![Code Climate](https://codeclimate.com/github/veasy/easy-remote-control/badges/gpa.svg)](https://codeclimate.com/github/veasy/easy-remote-control)
 A simple remote control server for plex home theater on linux.
 
 ### How does it work?
