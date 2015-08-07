@@ -1,0 +1,26 @@
+html, body {
+    font-size: 50px;
+    background-color: #eee;
+    font-family: Helvetica, sans-serif;
+    font-weight: 100;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+}
+table {
+	height: 100%;
+	width: 100%;
+	border-spacing: 5px;
+}
+.spacing {
+	width: 50%;
+}
+.button {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+}
+.button:hover, .button:focus {
+    background-color: rgb(3,90,160);
+    color: #fff;
+}

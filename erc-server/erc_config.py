@@ -1,0 +1,7 @@
+
+ERC_SERVER_PORT = 5000
+ERC_SERVER_STATIC_FOLDER = '../../erc-webapp/resources'
+ERC_SERVER_STATIC_PATH = '/resources'
+ERC_SERVER_TEMPLATE_FOLDER = '../../erc-webapp'
+
+ERC_SERVER_DEBUG_MODE = True
