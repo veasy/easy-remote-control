@@ -1,39 +1,32 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Veasy remote control</title>
-		<script>
-			function press(type) {
-				var serverAddress = "http://192.168.1.35:5000";
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name='apple-mobile-web-app-status-bar-style' content='default'>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="EasyRemoteControl">
 
-				xhr = new XMLHttpRequest();
-				xhr.open("GET",serverAddress + "/" + type,true);
-				xhr.send();
-			}
-		</script>
-		<link rel="stylesheet" type="text/css" href="{{ resources }}/style.css">
-	</head>
-	<body>
-		<h1>Resource Path: {{ resources }}</h1>
-		<table>
-			<tbody>
-				<tr>
-					<td class="button" colspan="6" onclick="press('up')">Up</td>
-				</tr>
-				<tr>
-					<td class="button" onclick="press('left')">Left</td>
-					<td class="spacing" colspan="4"></td>
-					<td class="button" onclick="press('right')">Right</td>
-				</tr>
-				<tr>
-					<td class="button" colspan="6" onclick="press('down')">Down</td>
-				</tr>
-				<tr>
-					<td class="button" colspan="3" onclick="press('menu')">Menu</td>
-					<td class="button" colspan="3" onclick="press('play')">Play</td>
-				</tr>
-			</tbody>
-		</table>
-	</body>
+    <title>easy remote control</title>
+
+    <link href="/resources/lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="/resources/css/style.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" href="/resources/img/ionic.png">
+    <link rel="apple-touch-startup-image" href="/resources/img/ionic.png">
+
+    <script src="/resources/lib/ionic/js/ionic.bundle.js"></script>
+
+    <script src="/resources/js/app.js"></script>
+    <script src="/resources/js/controllers.js"></script>
+    <script src="/resources/js/services.js"></script>
+  </head>
+  <body ng-app="starter">
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+  </body>
 </html>
