@@ -13,12 +13,12 @@ angular.module('starter.controllers', [])
   var socket = Remote.socket.connect('/mouse');
 
   $scope.onDrag = function(event)  {
-  $scope.xCenter = event.gesture.center.pageX;
-  $scope.yCenter = event.gesture.center.pageY;
-  $scope.xEvent = event.gesture.deltaX;
-  $scope.yEvent = event.gesture.deltaY;
+    $scope.xCenter = event.gesture.center.pageX;
+    $scope.yCenter = event.gesture.center.pageY;
+    $scope.xEvent = event.gesture.deltaX;
+    $scope.yEvent = event.gesture.deltaY;
 
-    socket.emit('mouseDragged', {data: {x:event.gesture.deltaX, y:event.gesture.deltaY} });
+    socket.emit('mouseDragged', {x:event.gesture.deltaX, y:event.gesture.deltaY});
   };
 })
 
