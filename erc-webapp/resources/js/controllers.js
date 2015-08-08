@@ -20,6 +20,13 @@ angular.module('starter.controllers', [])
 
     socket.emit('mouseDragged', {x:event.gesture.deltaX, y:event.gesture.deltaY});
   };
+
+  $scope.left = function() {
+    socket.emit('mouseLeft', {});
+  };
+  $scope.right = function() {
+    socket.emit('mouseRight', {});
+  };
 })
 
 .controller('ApplicationsCtrl', function($scope) {
