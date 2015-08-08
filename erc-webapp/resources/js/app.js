@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.directives'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -24,38 +24,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.remote', {
     url: '/remote',
     views: {
-      'tab-dash': {
+      'tab-remote': {
         templateUrl: '/resources/templates/tab-remote.html',
         controller: 'RemoteCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.mouse', {
+      url: '/mouse',
       views: {
-        'tab-chats': {
-          templateUrl: '/resources/templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: '/resources/templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-mouse': {
+          templateUrl: '/resources/templates/tab-mouse.html',
+          controller: 'MouseCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.applications', {
+    url: '/applications',
     views: {
-      'tab-account': {
-        templateUrl: '/resources/templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-applications': {
+        templateUrl: '/resources/templates/tab-applications.html',
+        controller: 'ApplicationsCtrl'
       }
     }
   });
