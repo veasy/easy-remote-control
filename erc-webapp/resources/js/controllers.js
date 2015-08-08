@@ -12,12 +12,26 @@ angular.module('starter.controllers', [])
 .controller('MouseCtrl', function($scope, Remote) {
   var socket = Remote.socket.connect('/mouse');
 
+  var lastX = 0;
+  var lastY = 0;
+
   $scope.onDrag = function(event)  {
     $scope.xEvent = event.gesture.deltaX;
     $scope.yEvent = event.gesture.deltaY;
 
-    socket.emit('mouseDragged', {x:event.gesture.deltaX, y:event.gesture.deltaY});
+    deltaX = event.gesture.deltaX - lastX
+    deltaY = event.gesture.deltaY - lastY
+
+    lastX = event.gesture.deltaX;
+    lastY = event.gesture.deltaY;
+
+    socket.emit('mouseDragged', {x:deltaX, y:deltaY});
   };
+
+  $scope.onRelease = function(event) {
+    lastX = 0;
+    lastY = 0;
+  }
 
   $scope.left = function() {
     socket.emit('mouseLeft', {});
