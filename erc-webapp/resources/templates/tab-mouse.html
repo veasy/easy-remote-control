@@ -1,14 +1,12 @@
 <ion-view view-title="Mouse">
   <ion-content scroll="false">
     <div on-drag="onDrag($event)" on-release="onRelease($event)" id="mouse-control">
-      <div>xCenter: {{xCenter}}</div>
-      <div>yCenter: {{yCenter}}</div>
       <div>xEvent: {{xEvent}}</div>
       <div>yEvent: {{yEvent}}</div>
 
       <div class="mouse-buttons">
-        <div ng-click="left" class="button">Left</div>
-        <div ng-click="right" class="button">Right</div>
+        <div ng-click="left()" class="button">Left</div>
+        <div ng-click="right()" class="button">Right</div>
       </div>
     </div>
   </ion-content>
