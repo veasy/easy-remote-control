@@ -1,4 +1,4 @@
-from unified_control.mouse import x_mouse
+from erc_server.unified_control.mouse import x_mouse
 
 __author__ = 'cansik'
 
