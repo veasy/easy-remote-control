@@ -11,6 +11,8 @@ def mousemove(x, y):
 def mousemove_relate(dx, dy):
     __xdotool_call('mousemove_relative -- %s %s' % (dx, dy))
 
+def click(direction):
+    __xdotool_call('click %s' % direction)
 
 def getmouselocation():
     result = __xdotool_call('getmouselocation')
