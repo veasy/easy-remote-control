@@ -1,4 +1,4 @@
-import Xdotool
+from erc_server import Xdotool
 from erc_server import socketio
 from flask.ext.socketio import emit
 
