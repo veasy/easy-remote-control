@@ -1,6 +1,7 @@
 from erc_server import Xdotool
 from erc_server import socketio
 from flask.ext.socketio import emit
+from erc_server.unified_control.mouse import unified_mouse
 
 __author__ = 'cansik'
 
@@ -14,7 +15,8 @@ def mouse_connect():
 def mouse_message(message):
     dx = int(message['x'])
     dy = int(message['y'])
-    Xdotool.mousemove_relate(dx, dy)
+    unified_mouse.move_mouse(abs(dx), abs(dy))
+    #Xdotool.mousemove_relate(dx, dy)
     print message
 
 @socketio.on('mouseLeft', namespace=MOUSE_NAMESPACE)
