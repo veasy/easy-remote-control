@@ -15,7 +15,7 @@ def mouse_connect():
 def mouse_message(message):
     dx = int(message['x'])
     dy = int(message['y'])
-    unified_mouse.move_mouse(abs(dx), abs(dy))
+    unified_mouse.move_mouse_relate(dx, dy)
     #Xdotool.mousemove_relate(dx, dy)
     print message
 
