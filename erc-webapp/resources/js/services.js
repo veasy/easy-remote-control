@@ -1,7 +1,7 @@
 angular.module('starter.services', [])
 
 .factory('Remote', function($http) {
-  var serverAddress = '192.168.1.3';
+  var serverAddress = '192.168.1.35';
   var serverPort = 5000;
 
   return {
