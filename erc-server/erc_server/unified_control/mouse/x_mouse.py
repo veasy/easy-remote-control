@@ -1,4 +1,5 @@
-from ctypes import cdll
+from _ctypes import byref
+from ctypes import cdll, c_uint32, c_int, c_uint
 
 
 def move_mouse(x, y):
@@ -18,14 +19,17 @@ def move_mouse_relative(dx, dy):
 def get_mouse_position():
     dll = cdll.LoadLibrary('libX11.so')
     d = dll.XOpenDisplay(None)
-    root = dll.XDefaultRootWindow(d)
+    w = dll.XDefaultRootWindow(d)
     # todo: do somethinghere
-    x = 0
-    y = 0
-    result = dll.XQueryPointer(d, root, 0, 0, 0, 0, x, y, 0)
+    (root_id, child_id) = (c_uint32(), c_uint32())
+    (root_x, root_y, win_x, win_y) = (c_int(), c_int(), c_int(), c_int())
+    mask = c_uint()
+    result = dll.XQueryPointer(d, c_uint32(w), byref(root_id), byref(child_id),
+                               byref(root_x), byref(root_y),
+                               byref(win_x), byref(win_y), byref(mask))
 
     print 'Result: %s' % result
-    print 'Coordinates: %s, %s' % (x, y)
+    print 'Coordinates: %s, %s' % (root_x, root_y)
 
     dll.XCloseDisplay(d)
-    return x, y
+    return root_x, root_y
