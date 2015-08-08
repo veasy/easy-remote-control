@@ -12,7 +12,7 @@ def move_mouse(x, y):
 
 def move_mouse_relative(dx, dy):
     x, y = get_mouse_position()
-    move_mouse(abs(x + dx), abs(y + dy))
+    move_mouse(abs(x.value + dx), abs(y.value + dy))
     pass
 
 
