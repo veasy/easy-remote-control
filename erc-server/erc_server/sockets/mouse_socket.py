@@ -13,8 +13,8 @@ def mouse_connect():
 
 @socketio.on('mouseDragged', namespace=MOUSE_NAMESPACE)
 def mouse_message(message):
-    dx = int(message['x'])
-    dy = int(message['y'])
+    dx = float(message['x'])
+    dy = float(message['y'])
     unified_mouse.move_mouse_relate(dx, dy)
     #Xdotool.mousemove_relate(dx, dy)
     # print message
