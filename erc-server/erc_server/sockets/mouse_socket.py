@@ -17,7 +17,7 @@ def mouse_message(message):
     dy = int(message['y'])
     unified_mouse.move_mouse_relate(dx, dy)
     #Xdotool.mousemove_relate(dx, dy)
-    print message
+    # print message
 
 @socketio.on('mouseLeft', namespace=MOUSE_NAMESPACE)
 def mouse_message(message):
