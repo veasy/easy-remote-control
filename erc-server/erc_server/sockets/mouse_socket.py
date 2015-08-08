@@ -1,3 +1,4 @@
+import Xdotool
 from erc_server import socketio
 from flask.ext.socketio import emit
 
@@ -11,6 +12,16 @@ def mouse_connect():
 
 @socketio.on('mouseDragged', namespace=MOUSE_NAMESPACE)
 def mouse_message(message):
+
+    dx = int(message['data']['x'])
+    dy = int(message['data']['y'])
+    Xdotool.mousemove_relate(dx, dy)
+
+    #coordinates = Xdotool.getmouselocation()
+    #x = int(coordinates['x']) + dx
+    #y = int(coordinates['y']) + dy
+
+    #Xdotool.mousemove(x, y)
     print message
 
 @socketio.on('mouseLeft', namespace=MOUSE_NAMESPACE)

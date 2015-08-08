@@ -1,19 +1,23 @@
-import os
+import subprocess
 
 __author__ = 'cansik'
 
 
 def mousemove(x, y):
-    __xdotool_call('mousemove %s %s' % (x, y))
+    output = __xdotool_call('mousemove %s %s' % (x, y))
+    print output
     pass
+
+def mousemove_relate(dx, dy):
+    __xdotool_call('mousemove_relative -- %s %s' % (dx, dy))
 
 
 def getmouselocation():
-    # x:418 y:420 screen:0 window:417
     result = __xdotool_call('getmouselocation')
-    return result
+    coordinates = dict([x.split(':') for x in result.split(' ')])
+    return coordinates
 
 
 def __xdotool_call(command):
-    code = os.system('xdotool %s' % command)
-    return code
+    output = subprocess.check_output('xdotool %s' % command, shell=True)
+    return output.strip()
