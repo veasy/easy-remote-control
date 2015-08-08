@@ -13,8 +13,8 @@ def mouse_connect():
 @socketio.on('mouseDragged', namespace=MOUSE_NAMESPACE)
 def mouse_message(message):
 
-    dx = int(message['data']['x'])
-    dy = int(message['data']['y'])
+    dx = int(message['x'])
+    dy = int(message['y'])
     Xdotool.mousemove_relate(dx, dy)
 
     #coordinates = Xdotool.getmouselocation()
