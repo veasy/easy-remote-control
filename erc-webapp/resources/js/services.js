@@ -6,16 +6,16 @@ angular.module('starter.services', [])
 
   return {
     sendHTTP: function(route) {
-      $http.get('http://' + serverAddress + ':' + 5000 + route);
+      $http.get(route);
     },
     prepareSendHTTP: function(route) {
       return function() {
-        $http.get('http://' + serverAddress + ':' + 5000 + route);
+        $http.get(route);
       }
     },
     socket: {
       connect: function(route) {
-        return io.connect('http://' + serverAddress + ':' + serverPort + route);
+        return io.connect(route);
       }
     }
   };
