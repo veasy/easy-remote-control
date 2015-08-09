@@ -36,12 +36,12 @@ def get_mouse_position():
 
     print 'Coordinates: %s, %s' % (root_x, root_y)
 
-    return int(root_x), int(root_y)
+    return root_x.value, root_y.value
 
 
 def get_screen_size():
     xwa = _get_xwindow_attributes()
-    return int(xwa.width), int(xwa.height)
+    return xwa.width.value, xwa.height.value
 
 
 def _get_xwindow_attributes():
