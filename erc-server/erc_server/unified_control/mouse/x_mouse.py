@@ -34,8 +34,6 @@ def get_mouse_position():
                         byref(root_x), byref(root_y),
                         byref(win_x), byref(win_y), byref(mask))
 
-    print 'Coordinates: %s, %s' % (root_x, root_y)
-
     return root_x.value, root_y.value
 
 
