@@ -1,4 +1,3 @@
 flask
 flask-socketio
 flask-cors
--e git://github.com/msanders/autopy.git#egg=autopy

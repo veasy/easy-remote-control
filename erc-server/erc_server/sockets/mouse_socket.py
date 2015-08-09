@@ -1,8 +1,8 @@
-import autopy
 from erc_server import Xdotool
 from erc_server import socketio
 from flask.ext.socketio import emit
 import math
+from erc_server.unified_control.mouse import unified_mouse
 
 __author__ = 'cansik'
 
@@ -17,8 +17,8 @@ def mouse_message(message):
     dx = float(message['x'])
     dy = float(message['y'])
 
-    width, height = autopy.screen.get_size()
-    cx, cy = autopy.mouse.get_pos()
+    width, height = unified_mouse.get_screen_size()
+    cx, cy = unified_mouse.get_mouse_position()
 
     x = int(dx + float(cx))
     y = int(dy + float(cy))
@@ -27,7 +27,7 @@ def mouse_message(message):
     x = min(width - 1, max(0, x))
     y = min(height - 1, max(0, y))
 
-    autopy.mouse.move(x, y)
+    unified_mouse.move_mouse(x, y)
 
 @socketio.on('mouseLeft', namespace=MOUSE_NAMESPACE)
 def mouse_message(message):

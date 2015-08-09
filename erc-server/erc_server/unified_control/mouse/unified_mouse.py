@@ -13,3 +13,6 @@ def move_mouse_relate(dx, dy):
 
 def get_mouse_position():
     return __mouse.get_mouse_position()
+
+def get_screen_size():
+    return __mouse.get_screen_size()
