@@ -37,7 +37,7 @@ def get_mouse_position():
     # print 'Result: %s' % result
     # print 'Coordinates: %s, %s' % (root_x, root_y)
 
-    return root_x, root_y
+    return int(root_x), int(root_y)
 
 
 def get_screen_size():
