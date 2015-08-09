@@ -1,4 +1,3 @@
-from _ctypes import byref, Structure
 from ctypes import *
 
 # custom types
@@ -8,7 +7,7 @@ t_Display = c_void_p
 t_Window = c_ulong
 t_Colormap = c_ulong
 
-_xlib = cdll.LoadLibrary('libX11.so.6')
+_xlib = cdll.LoadLibrary('libX11.so')
 _display = _xlib.XOpenDisplay(None)
 _window = _xlib.XDefaultRootWindow(_display)
 
