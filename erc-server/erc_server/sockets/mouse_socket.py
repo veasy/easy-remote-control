@@ -21,6 +21,8 @@ def mouse_message(message):
     width, height = unified_mouse.get_screen_size()
     cx, cy = unified_mouse.get_mouse_position()
 
+    print ('test: %s %s' % (cx, cy))
+
     x = int(dx + float(cx))
     y = int(dy + float(cy))
 
