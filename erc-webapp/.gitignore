@@ -1,0 +1,4 @@
+node_modules
+#resources/lib/*
+
+!resources/lib/socketio
