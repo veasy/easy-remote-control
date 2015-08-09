@@ -43,7 +43,7 @@ def get_mouse_position():
 
 def get_screen_size():
     xwa = _get_xwindow_attributes()
-    return xwa.width, xwa.height
+    return int(xwa.width), int(xwa.height)
 
 
 def _get_xwindow_attributes():
