@@ -1,12 +1,21 @@
-from _ctypes import byref
-from ctypes import cdll, c_uint32, c_int, c_uint
+from _ctypes import byref, Structure
+from ctypes import *
 
-_xlib = cdll.LoadLibrary('libX11.so')
+# custom types
+t_Atom = c_ulong
+t_Bool = c_int
+t_Display = c_void_p
+t_Window = c_ulong
+t_Colormap = c_ulong
+
+_xlib = cdll.LoadLibrary('libX11.so.6')
 _display = _xlib.XOpenDisplay(None)
 _window = _xlib.XDefaultRootWindow(_display)
 
+
 def close_display():
     _xlib.XCloseDisplay(_display)
+
 
 def move_mouse(x, y):
     _xlib.XWarpPointer(_display, None, _window, 0, 0, 0, 0, int(x), int(y))
@@ -31,8 +40,41 @@ def get_mouse_position():
 
     return root_x, root_y
 
+
 def get_screen_size():
-    attributes = _xlib.XWindowAttributes()
-    _xlib.XGetWindowAttributes(_display, _window, byref(attributes))
-    print '--> attributes: %s' % attributes
-    return attributes.root
+    xwa = _get_xwindow_attributes()
+    return xwa.width, xwa.height
+
+
+def _get_xwindow_attributes():
+    xwa = XWindowAttributes()
+    _xlib.XGetWindowAttributes(_display, _window, byref(xwa))
+    return xwa
+
+
+class XWindowAttributes(Structure):
+    _fields_ = [
+        ('x', c_int),
+        ('y', c_int),
+        ('width', c_int),
+        ('height', c_int),
+        ('border_width', c_int),
+        ('depth', c_int),
+        ('visual', c_void_p),
+        ('root', t_Window),
+        ('class', c_int),
+        ('bit_gravity', c_int),
+        ('win_gravity', c_int),
+        ('backing_store', c_int),
+        ('backing_planes', c_ulong),
+        ('backing_pixel', c_ulong),
+        ('save_under', t_Bool),
+        ('colormap', t_Colormap),
+        ('map_installed', t_Bool),
+        ('map_state', c_int),
+        ('all_event_masks', c_long),
+        ('your_event_masks', c_long),
+        ('do_not_propagate_mask', c_long),
+        ('override_redirect', t_Bool),
+        ('screen', c_void_p),
+    ]
