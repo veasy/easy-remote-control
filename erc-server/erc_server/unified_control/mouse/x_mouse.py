@@ -34,4 +34,5 @@ def get_mouse_position():
 def get_screen_size():
     attributes = _xlib.XWindowAttributes()
     _xlib.XGetWindowAttributes(_display, _window, byref(attributes))
+    print '--> attributes: %s' % attributes
     return attributes.root

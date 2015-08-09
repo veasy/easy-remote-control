@@ -1,7 +1,6 @@
 from erc_server import Xdotool
 from erc_server import socketio
 from flask.ext.socketio import emit
-import math
 from erc_server.unified_control.mouse import unified_mouse
 
 __author__ = 'cansik'
