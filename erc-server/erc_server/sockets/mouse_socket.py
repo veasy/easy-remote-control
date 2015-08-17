@@ -1,11 +1,12 @@
-from erc_server import Xdotool
 from erc_server import socketio
 from flask.ext.socketio import emit
-from erc_server.unified_control.mouse import unified_mouse
+from pyunicon.UCMouse import UCMouse
 
 __author__ = 'cansik'
 
 MOUSE_NAMESPACE = '/mouse'
+
+__mouse = UCMouse()
 
 
 @socketio.on('connect', namespace=MOUSE_NAMESPACE)
@@ -18,28 +19,18 @@ def mouse_message(message):
     dx = float(message['x'])
     dy = float(message['y'])
 
-    width, height = unified_mouse.get_screen_size()
-    cx, cy = unified_mouse.get_mouse_position()
-
-    x = int(dx + float(cx))
-    y = int(dy + float(cy))
-
-    # check bounds
-    x = min(width - 1, max(0, x))
-    y = min(height - 1, max(0, y))
-
-    unified_mouse.move_mouse(x, y)
+    __mouse.move_relative(dx, dy)
 
 
 @socketio.on('mouseLeft', namespace=MOUSE_NAMESPACE)
 def mouse_message(message):
-    Xdotool.click(1)
+    __mouse.click_left()
     print 'left click'
 
 
 @socketio.on('mouseRight', namespace=MOUSE_NAMESPACE)
 def mouse_message(message):
-    Xdotool.click(3)
+    __mouse.click_right()
     print 'right click'
 
 
