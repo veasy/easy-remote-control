@@ -42,9 +42,9 @@ angular.module('starter.controllers', [])
   var socket = Remote.socket.connect('/text');
 
   var getCharFromKeyCode = function(keyCode) {
-    if (keyCode === 8) return 'delete';
-    if (keyCode === 13) return 'enter';
-    if (keyCode === 32) return 'space';
+    if (keyCode === 8) return 'DELETE';
+    if (keyCode === 13) return 'RETURN';
+    if (keyCode === 32) return 'SPACE';
 
     return String.fromCharCode(event.keyCode);
   };

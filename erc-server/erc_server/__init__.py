@@ -21,3 +21,4 @@ import routes.default_routes
 import routes.keys_routes
 import routes.media_routes
 import sockets.mouse_socket
+import sockets.keyboard_socket
