@@ -16,9 +16,6 @@ angular.module('starter.controllers', [])
   var lastY = 0;
 
   $scope.onDrag = function(event)  {
-    $scope.xEvent = event.gesture.deltaX;
-    $scope.yEvent = event.gesture.deltaY;
-
     deltaX = event.gesture.deltaX - lastX
     deltaY = event.gesture.deltaY - lastY
 
@@ -31,7 +28,7 @@ angular.module('starter.controllers', [])
   $scope.onRelease = function(event) {
     lastX = 0;
     lastY = 0;
-  }
+  };
 
   $scope.left = function() {
     socket.emit('mouseLeft', {});
@@ -41,8 +38,18 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ApplicationsCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
+.controller('TextCtrl', function($scope, Remote) {
+  var socket = Remote.socket.connect('/text');
+
+  var getCharFromKeyCode = function(keyCode) {
+    if (keyCode === 8) return 'delete';
+    if (keyCode === 13) return 'enter';
+    if (keyCode === 32) return 'space';
+
+    return String.fromCharCode(event.keyCode);
+  };
+
+  $scope.sendChar = function(event) {
+    socket.emit('char', getCharFromKeyCode(event.keyCode));
   };
 });

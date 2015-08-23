@@ -1,14 +1,8 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.directives'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
-    if (!window.navigator.standalone) {
-      var meta = document.createElement("meta");
-      var head = document.getElementsByTagName("head")[0];
 
-      meta.setAttribute("name", "apple-mobile-web-app-status-bar-style");
-      meta.setAttribute("content", "black-translucent");
-      head.appendChild(meta); }
   });
 })
 
@@ -41,12 +35,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
 
-  .state('tab.applications', {
-    url: '/applications',
+  .state('tab.text', {
+    url: '/text',
     views: {
-      'tab-applications': {
-        templateUrl: '/resources/templates/tab-applications.html',
-        controller: 'ApplicationsCtrl'
+      'tab-text': {
+        templateUrl: '/resources/templates/tab-text.html',
+        controller: 'TextCtrl'
       }
     }
   });
