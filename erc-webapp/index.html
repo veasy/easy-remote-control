@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name='apple-mobile-web-app-status-bar-style' content='default'>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="EasyRemoteControl">
 
@@ -16,13 +15,15 @@
     <link rel="apple-touch-icon" href="/resources/img/ionic.png">
     <link rel="apple-touch-startup-image" href="/resources/img/ionic.png">
 
+    <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/resources/img/apple-touch-startup-image-320x460.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/resources/img/apple-touch-startup-image-640x920.png">
+
     <script src="/resources/lib/ionic/js/ionic.bundle.js"></script>
     <script src="/resources/lib/socketio/socketio.js"></script>
 
     <script src="/resources/js/app.js"></script>
     <script src="/resources/js/controllers.js"></script>
     <script src="/resources/js/services.js"></script>
-    <script src="/resources/js/directives.js"></script>
   </head>
   <body ng-app="starter">
     <ion-nav-bar class="bar-stable">
