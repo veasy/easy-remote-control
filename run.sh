@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-cd ./erc-server/
-sudo ./start_erc-server.sh
+cd /home/oskar/easy-remote-control/erc-server/
+./start_erc-server.sh
