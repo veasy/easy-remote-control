@@ -16,7 +16,8 @@ start_erc-server.sh
 ### Application
 The application is implemented for mobile devices and so you can just navigate to the ip address of your server and the port number `5000`. Here are some screenshots from the server app:
 
-![Controls](images/controls.jpg)![Mouse](images/mouse.jpg)
+![Controls](images/all.jpg)
+*Screenshots of the webapp*
 
 ### How to use it?
 You can now call all the routes the server provieds. For example:
